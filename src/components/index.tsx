@@ -1,7 +1,7 @@
-import { Image } from "./Image";
-import { ImageBox } from "./ImageBox";
-import { PageLayout } from "./PageLayout";
-import { Txt } from "./Txt";
-import { Button } from "./Button";
-
-export { Image, ImageBox, PageLayout, Txt, Button };
+export { Image } from "./Image";
+export { Box } from "./Box";
+export { PageLayout } from "./PageLayout";
+export { Txt } from "./Txt";
+export { Button } from "./Button";
+export { Select } from "./Select";
+export { SelectedOptions } from "./SelectedOptions";

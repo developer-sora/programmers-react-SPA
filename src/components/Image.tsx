@@ -1,14 +1,13 @@
-/** @jsxImportSource @emotion/react */
-import React, { ImgHTMLAttributes } from "react";
+import { ImgHTMLAttributes } from "react";
 import { css } from "@emotion/react";
 
 interface Props extends ImgHTMLAttributes<HTMLImageElement> {
   width: number;
-  altText: string;
+  alt: string;
   height?: number;
 }
 
-export function Image({ width, height, altText, ...props }: Props) {
+export function Image({ width, alt, height, ...props }: Props) {
   return (
     <img
       css={css`
@@ -16,7 +15,7 @@ export function Image({ width, height, altText, ...props }: Props) {
         height: ${height}px;
         object-fit: contain;
       `}
-      alt={altText}
+      alt={alt}
       {...props}
     />
   );

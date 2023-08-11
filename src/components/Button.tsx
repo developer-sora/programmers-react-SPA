@@ -1,49 +1,21 @@
-/** @jsxImportSource @emotion/react */
-import React, { ButtonHTMLAttributes } from "react";
-
-interface Props extends ButtonHTMLAttributes<HTMLButtonElement> {
-  variant?: "primary";
-  size?: "medium" | "large";
-}
-
-export function Button({
-  variant = "primary",
-  size = "medium",
-  ...props
-}: Props) {
+export function Button({ ...props }) {
   return (
     <button
       css={{
         outline: "none",
         cursor: "pointer",
         borderRadius: "8px",
-        ...TYPE_VARIANTS[variant],
-        ...SIZE_VARIANTS[size],
+        width: "100%",
+        background: "#1890ff",
+        color: "#fff",
+        fontSize: "1.2rem",
+        border: "1px solid #40a9ff",
+        padding: "10px",
+        "&:hover": {
+          backgroundColor: "#0050b3",
+        },
       }}
       {...props}
     />
   );
 }
-
-const TYPE_VARIANTS = {
-  primary: {
-    color: "#fff",
-    backgroundColor: "#1890ff",
-    border: "1px solid #40a9ff",
-    "&:hover": {
-      backgroundColor: "#0050b3",
-    },
-  },
-};
-
-const SIZE_VARIANTS = {
-  medium: {
-    width: "100%",
-    fontSize: "1.2rem",
-    padding: "10px",
-  },
-  large: {
-    fontSize: "17px",
-    padding: "11px 22px",
-  },
-};

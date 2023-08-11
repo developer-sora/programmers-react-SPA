@@ -1,12 +1,17 @@
-/** @jsxImportSource @emotion/react */
 import { HTMLAttributes } from "react";
 
 interface Props extends HTMLAttributes<HTMLSpanElement> {
   typography?: "h1" | "h2" | "h3" | "p";
-  color: string;
+  color?: string;
+  display?: "inline" | "block" | "inline-block";
 }
 
-export function Txt({ typography = "p", color, ...props }: Props) {
+export function Txt({
+  typography = "p",
+  color = "black",
+  display = "inline",
+  ...props
+}: Props) {
   return (
     <span
       css={{
@@ -14,6 +19,7 @@ export function Txt({ typography = "p", color, ...props }: Props) {
         padding: 0,
         color,
         lineHeight: 1.6,
+        display,
         ...TYPOGRAPH_VARIANT[typography],
       }}
       {...props}
